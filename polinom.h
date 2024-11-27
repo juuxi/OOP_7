@@ -20,7 +20,7 @@ protected:
     TArray<number> coefficients;
 public:
     TPolinom();
-    TPolinom(int, TArray<number>);
+    TPolinom(int, number*);
     TPolinom(number, number*, int);
     template <class T>
     friend ostream& operator<< (ostream&, TPolinom<T>&);
@@ -49,9 +49,10 @@ TPolinom<number>::TPolinom()
 }
 
 template <class number>
-TPolinom<number>::TPolinom(int n, TArray<number> _coefficients)
+TPolinom<number>::TPolinom(int n, number* _coefficients)
 {
     N = n;
+    coefficients.change_size(N+1);
     for (int i = 0; i < N; i++)
         coefficients[i] = _coefficients[i];
     printMode = EPrintModeClassic;

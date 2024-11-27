@@ -7,7 +7,7 @@ template <class number>
 class TFunction : private TPolinom<number>
 {
 public:
-    TFunction(int, TArray<number>);
+    TFunction(int n, number* derivatives) : TPolinom<number>::TPolinom(n, derivatives) {}
     using TPolinom<number>::operator();
     using TPolinom<number>::coefficients;
 };

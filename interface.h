@@ -7,7 +7,7 @@
 #include <QPushButton>
 #include <QRadioButton>
 #include "complex.h"
-#include "function.h"
+#include "fsin.h"
 
 class TInterface : public QWidget
 {

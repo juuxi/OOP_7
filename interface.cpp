@@ -25,6 +25,8 @@ TInterface::TInterface(QWidget *parent)
 
     output = new QLabel(this);
     output->setGeometry(10, 200, 500, 30);
+
+    TFsin<int> sin(5);
 }
 
 TInterface::~TInterface()

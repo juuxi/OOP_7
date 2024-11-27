@@ -10,13 +10,13 @@ CONFIG += c++11
 
 SOURCES += \
     complex.cpp \
-    function.cpp \
     main.cpp \
     interface.cpp
 
 HEADERS += \
     array.h \
     complex.h \
+    fsin.h \
     function.h \
     interface.h \
     polinom.h
