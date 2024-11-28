@@ -26,10 +26,33 @@ TInterface::TInterface(QWidget *parent)
     output = new QLabel(this);
     output->setGeometry(10, 200, 500, 30);
 
-    TFsin<int> sin(5);
+    connect(submit, SIGNAL(pressed()), this, SLOT(print_val()));
+
+
+}
+
+void TInterface::print_val()
+{
+    if (sin->isChecked())
+    {
+        TFsin<TComplex> sin_func(5);
+        QString s;
+        s += "p";
+        s << TComplex(0, 2);
+        s += " = ";
+        s << sin_func(TComplex(0, 2));
+        output->setText(s);
+    }
 }
 
 TInterface::~TInterface()
 {
+    delete power;
+    delete power_input;
+    delete func;
+    delete sin;
+    delete integral_sin;
+    delete submit;
+    delete output;
 }
 

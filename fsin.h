@@ -8,21 +8,11 @@ template <class number>
 class TFsin : public TFunction<number>
 {
     number* der_value;
-    int fact(int curr)
-    {
-        if (curr == 0)
-            return 1;
-        if (curr == 1)
-            return curr;
-        else
-            return fact(curr-1) * curr;
-    }
-
     number* count_der(int n)
     {
         der_value = new number[n+1];
         for (int i = 0; i < n; i++)
-            der_value[i] = sin(0)/fact(i);
+            der_value[i] = sin(0);
         return der_value;
     }
 public:

@@ -22,5 +22,7 @@ class TInterface : public QWidget
 public:
     TInterface(QWidget *parent = nullptr);
     ~TInterface();
+public slots:
+    void print_val();
 };
 #endif // TINTERFACE_H
