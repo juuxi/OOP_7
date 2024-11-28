@@ -2,6 +2,7 @@
 #define POLINOM_H
 
 #include "array.h"
+#include <math.h>
 #include <QString>
 
 enum EPrintMode
@@ -170,9 +171,9 @@ number TPolinom<number>::count_value (number _point)
 template <class number>
 number TPolinom<number>::operator() (number _point)
 {
-    number val = coefficients[N];
-    for (int i = 0; i < N; i++)
-        val = (_point/* - roots[i]*/) * val;
+    number val = 0;
+    for (int i = N; i >= 0; i--)
+        val += coefficients[i] * pow(_point, i);
     return val;
 }
 

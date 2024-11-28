@@ -18,6 +18,7 @@ public:
     friend istream& operator>> (istream&, TComplex&);
     friend QString& operator<< (QString&, TComplex);
     friend TComplex sqrt (TComplex);
+    friend TComplex pow (TComplex, double);
 
     void operator+= (TComplex);
     TComplex operator- (TComplex);

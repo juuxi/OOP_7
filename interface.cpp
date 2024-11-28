@@ -35,12 +35,13 @@ void TInterface::print_val()
 {
     if (sin->isChecked())
     {
-        TFsin<TComplex> sin_func(5);
+        int n = power_input->text().toInt();
+        TFsin<TComplex> sin_func(n);
         QString s;
         s += "p";
-        s << TComplex(0, 2);
+        s << TComplex(1, 0);
         s += " = ";
-        s << sin_func(TComplex(0, 2));
+        s << sin_func(TComplex(1, 0));
         output->setText(s);
     }
 }

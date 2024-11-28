@@ -125,3 +125,10 @@ TComplex sqrt (TComplex c)
     temp.im = sqrt(c.im);
     return temp;
 }
+
+TComplex pow (TComplex c, double d)
+{
+    c.re = pow(c.re, d);
+    c.im = pow(c.im, d);
+    return c;
+}
