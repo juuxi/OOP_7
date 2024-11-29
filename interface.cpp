@@ -11,6 +11,18 @@ TInterface::TInterface(QWidget *parent)
     power_input = new QLineEdit(this);
     power_input->setGeometry(210, 15, 30, 20);
 
+    a_name = new QLabel("a = ", this);
+    a_name->setGeometry(10, 90, 20, 30);
+
+    a_delimiter = new QLabel(" +i ", this);
+    a_delimiter->setGeometry(60, 90, 20, 30);
+
+    a_re = new QLineEdit(this);
+    a_re->setGeometry(30, 95, 30, 20);
+
+    a_im = new QLineEdit(this);
+    a_im->setGeometry(80, 95, 30, 20);
+
     func = new QLabel("Вычислить функцию", this);
     func->setGeometry(10, 60, 200, 30);
 
@@ -39,9 +51,9 @@ void TInterface::print_val()
         TFsin<TComplex> sin_func(n);
         QString s;
         s += "p";
-        s << TComplex(1, 0);
+        s << TComplex(a_re->text().toDouble(), a_im->text().toDouble());
         s += " = ";
-        s << sin_func(TComplex(1, 0));
+        s << sin_func(TComplex(a_re->text().toDouble(), a_im->text().toDouble()));
         output->setText(s);
     }
     else if (integral_sin->isChecked())
@@ -50,9 +62,9 @@ void TInterface::print_val()
         TFSi<TComplex> Si_func(n);
         QString s;
         s += "p";
-        s << TComplex(1, 0);
+        s << TComplex(a_re->text().toDouble(), a_im->text().toDouble());
         s += " = ";
-        s << Si_func(TComplex(1, 0));
+        s << Si_func(TComplex(a_re->text().toDouble(), a_im->text().toDouble()));
         output->setText(s);
     }
 }
@@ -61,6 +73,10 @@ TInterface::~TInterface()
 {
     delete power;
     delete power_input;
+    delete a_name;
+    delete a_re;
+    delete a_delimiter;
+    delete a_im;
     delete func;
     delete sin;
     delete integral_sin;
