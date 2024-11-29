@@ -44,6 +44,17 @@ void TInterface::print_val()
         s << sin_func(TComplex(1, 0));
         output->setText(s);
     }
+    else if (integral_sin->isChecked())
+    {
+        int n = power_input->text().toInt();
+        TFSi<TComplex> Si_func(n);
+        QString s;
+        s += "p";
+        s << TComplex(1, 0);
+        s += " = ";
+        s << Si_func(TComplex(1, 0));
+        output->setText(s);
+    }
 }
 
 TInterface::~TInterface()

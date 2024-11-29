@@ -16,6 +16,7 @@ SOURCES += \
 HEADERS += \
     array.h \
     complex.h \
+    fsi.h \
     fsin.h \
     function.h \
     interface.h \

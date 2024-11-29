@@ -8,6 +8,7 @@
 #include <QRadioButton>
 #include "complex.h"
 #include "fsin.h"
+#include "fsi.h"
 
 class TInterface : public QWidget
 {
